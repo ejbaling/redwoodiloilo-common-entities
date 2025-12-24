@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -7,15 +7,27 @@
 
     <!-- NuGet Package Metadata -->
     <PackageId>RedwoodIloilo.Common.Entities</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.6</Version>
     <Authors>Emmanuel</Authors>
     <Company>Redwood Iloilo</Company>
     <Description>Redwood Iloilo Common Entities</Description>
     <PackageTags>utility;shared;common</PackageTags>
     <RepositoryUrl>https://github.com/ejbaling/redwoodiloilo-common-entities</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/ejbaling/redwoodiloilo-common-entities</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
 
     <!-- Optional: automatically create package on build -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+    <!-- Allow SDK to generate assembly attributes to avoid duplicate definitions -->
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblyVersion>1.0.6.0</AssemblyVersion>
+    <FileVersion>1.0.6.0</FileVersion>
+    <AssemblyInformationalVersion>1.0.6</AssemblyInformationalVersion>
   </PropertyGroup>
 
 </Project>
