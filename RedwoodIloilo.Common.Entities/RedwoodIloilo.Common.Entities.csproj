@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -7,7 +7,7 @@
 
     <!-- NuGet Package Metadata -->
     <PackageId>RedwoodIloilo.Common.Entities</PackageId>
-    <Version>1.0.6</Version>
+    <Version>1.0.8</Version>
     <Authors>Emmanuel</Authors>
     <Company>Redwood Iloilo</Company>
     <Description>Redwood Iloilo Common Entities</Description>
@@ -25,9 +25,9 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <AssemblyVersion>1.0.6.0</AssemblyVersion>
-    <FileVersion>1.0.6.0</FileVersion>
-    <AssemblyInformationalVersion>1.0.6</AssemblyInformationalVersion>
+    <AssemblyVersion>1.0.8.0</AssemblyVersion>
+    <FileVersion>1.0.8.0</FileVersion>
+    <AssemblyInformationalVersion>1.0.8</AssemblyInformationalVersion>
   </PropertyGroup>
 
 </Project>

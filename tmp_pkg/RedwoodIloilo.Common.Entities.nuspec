@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>RedwoodIloilo.Common.Entities</id>
+    <version>1.0.8</version>
+    <authors>Emmanuel</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://github.com/ejbaling/redwoodiloilo-common-entities</projectUrl>
+    <description>Redwood Iloilo Common Entities</description>
+    <tags>utility shared common</tags>
+    <repository type="git" url="https://github.com/ejbaling/redwoodiloilo-common-entities" commit="6c2a076b386377f6b4e98e322d354bd67bb9014d" />
+    <dependencies>
+      <group targetFramework="net8.0" />
+    </dependencies>
+  </metadata>
+</package>

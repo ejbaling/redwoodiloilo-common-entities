@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Type="http://schemas.microsoft.com/packaging/2010/07/manifest" Target="/RedwoodIloilo.Common.Entities.nuspec" Id="RAF8098F9A37095C5" />
+  <Relationship Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="/package/services/metadata/core-properties/410df00c1d8841c586e1e24a370fb96a.psmdcp" Id="R4F4C3AE34047984F" />
+</Relationships>
