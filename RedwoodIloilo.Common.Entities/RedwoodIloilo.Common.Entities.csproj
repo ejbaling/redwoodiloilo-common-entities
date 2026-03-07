@@ -30,4 +30,8 @@
     <AssemblyInformationalVersion>1.0.8</AssemblyInformationalVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Pgvector" Version="0.3.2" />
+  </ItemGroup>
+
 </Project>
