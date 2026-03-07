@@ -19,6 +19,10 @@ namespace RedwoodIloilo.Common.Entities
         // Optional JSON metadata (stored as jsonb)
         public string? MetadataJson { get; set; }
 
+        // Document-level tags for classification and routing (e.g., listing-level policies)
+        // Stored as a Postgres text[] when using EF Core + Npgsql.
+        public string[] Tags { get; set; } = Array.Empty<string>();
+
         // Navigation
         public ICollection<RagChunk> Chunks { get; set; } = new List<RagChunk>();
     }

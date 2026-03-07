@@ -11,14 +11,14 @@ Quick steps
 - From the repository root, to explicitly add or set a package version:
 
 ```powershell
-dotnet add WebhookApi\WebhookApi.csproj package RedwoodIloilo.Common.Entities --version 1.0.8
+dotnet add WebhookApi\WebhookApi.csproj package RedwoodIloilo.Common.Entities --version 1.0.9
 ```
 
 2. Clear caches and restore (force fresh resolution)
 
 ```powershell
 dotnet nuget locals all --clear
-dotnet restore WebhookApi.sln --no-cache
+dir
 dotnet build WebhookApi.sln -c Debug
 ```
 
@@ -29,7 +29,7 @@ $d = Get-ChildItem "$env:USERPROFILE\.nuget\packages\redwoodiloilo.common.entiti
 (Get-Item $d.FullName).VersionInfo | Select-Object FileVersion, ProductVersion, FileName
 ```
 
-Replace `<version>` with `1.0.8` (or the version you installed).
+Replace `<version>` with `1.0.9` (or the version you installed).
 
 Note: NuGet package version != AssemblyVersion. `FileVersion`/`ProductVersion` above reflect what OmniSharp shows in metadata.
 
