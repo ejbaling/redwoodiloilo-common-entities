@@ -29,7 +29,7 @@ $d = Get-ChildItem "$env:USERPROFILE\.nuget\packages\redwoodiloilo.common.entiti
 (Get-Item $d.FullName).VersionInfo | Select-Object FileVersion, ProductVersion, FileName
 ```
 
-Replace `<version>` with `1.0.9` (or the version you installed).
+Replace `<version>` with `1.0.10` (or the version you installed).
 
 Note: NuGet package version != AssemblyVersion. `FileVersion`/`ProductVersion` above reflect what OmniSharp shows in metadata.
 
@@ -75,11 +75,32 @@ dotnet restore --source LocalFeed
 
 - Update library `Version`, `AssemblyVersion` and `FileVersion` where appropriate in the library project.
 
+- Recommended workflow (run these commands from the library project directory: `d:\src\Entities\RedwoodIloilo.Common.Entities`)
+
 ```powershell
-# from library project folder
+# change to the project directory
+Set-Location d:\src\Entities\RedwoodIloilo.Common.Entities
+
+# pack into the default output folder (or specify -o)
 dotnet pack -c Release
-dotnet nuget push bin\Release\*.nupkg -s nuget.org -k <API_KEY>
+
+# OR pack into a local folder for easy discovery
+dotnet pack -c Release -o .\nupkgs
+
+# Push to nuget.org using an API key stored in an environment variable
+# (safer than pasting the key on the command line)
+$env:NUGET_API_KEY = '<YOUR_API_KEY>'
+dotnet nuget push .\nupkgs\*.nupkg -s https://api.nuget.org/v3/index.json -k $env:NUGET_API_KEY
+
+# If you prefer to push directly from bin\Release (default pack folder):
+dotnet nuget push .\bin\Release\*.nupkg -s https://api.nuget.org/v3/index.json -k $env:NUGET_API_KEY
 ```
+
+Notes
+
+- Do NOT commit API keys to source control. Use environment variables or CI secrets.
+- If the package Id+Version already exist on nuget.org, increment the `<Version>` in the `.csproj` and repack.
+- To publish from CI (GitHub Actions), store the API key as a repository secret and use `dotnet nuget push` in the workflow.
 
 7. Quick troubleshooting checklist
 

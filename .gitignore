@@ -47,3 +47,16 @@ msbuild.wrn
 WebhookApi/appsettings.Development.json
 WebhookApi/appsettings.Production.json
 WebhookApi/credentials.json
+
+# Package artifacts
+nupkgs/
+*.nupkg
+artifacts/
+
+# Build outputs
+bin/
+obj/
+
+# Optional: VS/IDE
+.vscode/
+*.user
