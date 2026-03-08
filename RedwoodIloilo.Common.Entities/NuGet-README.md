@@ -11,14 +11,14 @@ Quick steps
 - From the repository root, to explicitly add or set a package version:
 
 ```powershell
-dotnet add WebhookApi\WebhookApi.csproj package RedwoodIloilo.Common.Entities --version 1.0.9
+dotnet add WebhookApi\WebhookApi.csproj package RedwoodIloilo.Common.Entities --version <version>
 ```
 
 2. Clear caches and restore (force fresh resolution)
 
 ```powershell
+# from repository root (where WebhookApi.sln lives)
 dotnet nuget locals all --clear
-dir
 dotnet build WebhookApi.sln -c Debug
 ```
 
@@ -26,10 +26,9 @@ dotnet build WebhookApi.sln -c Debug
 
 ```powershell
 $d = Get-ChildItem "$env:USERPROFILE\.nuget\packages\redwoodiloilo.common.entities\<version>" -Filter 'RedwoodIloilo.Common.Entities.dll' -Recurse | Select-Object -First 1
+
 (Get-Item $d.FullName).VersionInfo | Select-Object FileVersion, ProductVersion, FileName
 ```
-
-Replace `<version>` with `1.0.10` (or the version you installed).
 
 Note: NuGet package version != AssemblyVersion. `FileVersion`/`ProductVersion` above reflect what OmniSharp shows in metadata.
 
@@ -80,20 +79,17 @@ dotnet restore --source LocalFeed
 ```powershell
 # change to the project directory
 Set-Location d:\src\Entities\RedwoodIloilo.Common.Entities
+dotnet clean
+dotnet build -c Release
+Get-Item .\bin\Release\net8.0\RedwoodIloilo.Common.Entities.dll | Select-Object @{n='FileVersion';e={$_.VersionInfo.FileVersion}}, @{n='ProductVersion';e={$_.VersionInfo.ProductVersion}}
 
-# pack into the default output folder (or specify -o)
-dotnet pack -c Release
-
-# OR pack into a local folder for easy discovery
+# pack into a local folder for easy discovery
 dotnet pack -c Release -o .\nupkgs
 
 # Push to nuget.org using an API key stored in an environment variable
 # (safer than pasting the key on the command line)
 $env:NUGET_API_KEY = '<YOUR_API_KEY>'
 dotnet nuget push .\nupkgs\*.nupkg -s https://api.nuget.org/v3/index.json -k $env:NUGET_API_KEY
-
-# If you prefer to push directly from bin\Release (default pack folder):
-dotnet nuget push .\bin\Release\*.nupkg -s https://api.nuget.org/v3/index.json -k $env:NUGET_API_KEY
 ```
 
 Notes
