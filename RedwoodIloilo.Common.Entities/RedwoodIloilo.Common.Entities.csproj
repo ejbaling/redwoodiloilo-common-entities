@@ -7,7 +7,7 @@
 
     <!-- NuGet Package Metadata -->
     <PackageId>RedwoodIloilo.Common.Entities</PackageId>
-    <Version>1.0.13</Version>
+    <Version>1.0.14</Version>
     <Authors>Emmanuel</Authors>
     <Company>Redwood Iloilo</Company>
     <Description>Redwood Iloilo Common Entities</Description>
@@ -25,9 +25,9 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <AssemblyVersion>1.0.13.0</AssemblyVersion>
-    <FileVersion>1.0.13.0</FileVersion>
-    <AssemblyInformationalVersion>1.0.13</AssemblyInformationalVersion>
+    <AssemblyVersion>1.0.14.0</AssemblyVersion>
+    <FileVersion>1.0.14.0</FileVersion>
+    <AssemblyInformationalVersion>1.0.14</AssemblyInformationalVersion>
   </PropertyGroup>
 
   <ItemGroup>
