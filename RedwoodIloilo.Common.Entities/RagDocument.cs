@@ -7,7 +7,12 @@ namespace RedwoodIloilo.Common.Entities
     {
         public Guid Id { get; set; }
 
+        public Guid AppId { get; set; }
+
         public string? Title { get; set; }
+
+        // SHA-256 hex fingerprint used for deduplication (e.g. error documents)
+        public string? Signature { get; set; }
 
         public string? Source { get; set; }
 

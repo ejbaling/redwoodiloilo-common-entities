@@ -9,6 +9,8 @@ namespace RedwoodIloilo.Common.Entities
 
         public Guid RagDocumentId { get; set; }
 
+        public Guid AppId { get; set; }
+
         // Order of the chunk within the document
         public int ChunkIndex { get; set; }
 
